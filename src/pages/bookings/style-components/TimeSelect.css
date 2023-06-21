@@ -1,0 +1,113 @@
+.container-principal-hour-button {
+    width: 400px;
+    height: 240px;
+    margin: 10px 0px 15px 0px;
+    background-color: var(--second-color);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+#hours-container {
+    display: flex;
+    align-items: center;
+    flex-basis: 30% 70%;
+    height: fit-content;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+}
+#icons-hours{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex-grow: 1 2 1;
+}
+
+.icon-hour{
+    display: grid;
+    place-items: center;
+}
+
+.icon-hour:first-child, .icon-hour:last-child {
+    height: 40px;
+}
+  
+.icon-hour:nth-child(2) {
+    height: 80px;
+}
+#hours{
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#minutes-container{
+    padding: 2px;
+    margin-top: 5px;
+    max-width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    overflow: auto;
+}
+#minutes-container::-webkit-scrollbar{
+    height: 7px; /* Anchura de la barra de desplazamiento */
+    width: 7px;
+}
+  
+#minutes-container::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+  
+#minutes-container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color del pulgar de la barra de desplazamiento */
+    border-radius: 5px;
+}
+  
+#minutes-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Color del pulgar de la barra de desplazamiento al pasar el ratón por encima */
+}
+.hour-button {
+    width: 50px;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 4px;
+    margin: 4px;
+    flex-shrink: 0;
+}
+.hour-button:hover {
+    color: var(--color-selected);
+    border-color: var(--color-selected);
+    background-color: white;
+    cursor: pointer;
+}
+
+h4#default-not-available {
+    color: white;
+    padding: 5px;
+    
+}
+
+.hour-button.disabled{
+    background-color: var(--color-disabled);
+    cursor: auto;
+    border: none;
+    text-decoration: line-through;
+    color: black;
+}
+
+.hour-button#selected{
+    background-color: var(--color-selected);
+    color: white;
+    border: solid black;
+}
+
+.hour-button#selected:hover {
+    border-color: var(--color-selected);
+}

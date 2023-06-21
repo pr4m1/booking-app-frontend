@@ -1,0 +1,108 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    z-index: 999;
+  }
+.modal-content-delete{
+  background-color: white;
+  min-height: min-content;
+  height: auto;
+  border-radius: 5px;
+  padding: 10px;
+  display:grid;
+  place-items: center;
+}
+.modal-content-delete h2{
+  padding: 10px;
+}
+  
+  .modal-content {
+    position: relative;
+    background-color: lightgray;
+    min-height: min-content;
+    height: auto;
+    border-radius: 5px;
+    padding: 10px;
+    display:grid;
+    place-items: center;
+  }
+  .botones-alert {
+    display: flex;
+    width: 30%;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .botones-alert button{
+    padding: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .botones-alert #button-delete{
+    background-color: var(--second-color);
+    color: white;
+  }
+  .botones-alert #button-cancel:hover,
+  .botones-alert #button-delete:hover{
+    background-color: var(--color-selected);
+  }
+
+.button-alert-close{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  border: 1px solid var(--second-color);
+  border-radius: 5px;
+}
+
+.button-alert-close::before,
+.button-alert-close::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 2px;
+  height: 10px;
+  background-color: var(--second-color);
+}
+
+.button-alert-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.content-alert-success-error{
+  height: 100%;
+  padding: 40px;
+  display: grid;
+  place-items: center;
+
+}
+
+.modal-close-cotent{
+  height: 100%;
+  padding: 10px;
+  font-size: 25px;
+}
+#icon-succes{
+  color: var(--color-exito);
+  width: 70px;
+  height: 70px;
+}
+#icon-error{
+  color: var(--color-error);
+  width: 70px;
+  height: 70px;
+}

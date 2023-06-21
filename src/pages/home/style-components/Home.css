@@ -1,0 +1,32 @@
+.contenedor-principal-home {
+    height: calc(100vh - var(--height-header));
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../../assets/laboratorio_gris.jpg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    background-size: 100% 100%;
+}
+
+.contenedor-principal-home h1, 
+.contenedor-principal-home p,
+.contenedor-principal-home .link-reserva-home {
+    background-color: #000000a3;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 3px;
+    margin: 2px;
+    color: white;
+    justify-content: center;
+}
+
+.link-reserva-home {
+    margin-top: 10px;
+    color: black;
+}
+.link-reserva-home:hover {
+    color: white;
+    border-color: white;
+    background-color: var(--color-selected);
+}

@@ -1,0 +1,87 @@
+.react-calendar { 
+    width: 400px;
+    background-color: var(--second-color);
+    color: black;
+    border-radius: 5px;
+    line-height: 1.125em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+   .react-calendar__navigation button {
+    color: white;
+    min-width: 44px;
+    background-color: var(--second-color);
+    padding: 4px;
+    font-size: 15px;
+    margin: 8px 4px 0px 4px;
+    border-radius: 5px;
+    border: 2px solid var(--color-aditional);
+   }
+   .react-calendar__navigation button:enabled:hover,
+   .react-calendar__navigation button:enabled:focus {
+    background-color: var(--color-selected);
+   }
+   .react-calendar__navigation button[disabled] {
+    background-color: var(--second-color);
+   }
+   
+   .react-calendar__month-view__days__day--weekend {
+    color: black;
+    background-color: var(--color-aditional);
+   } 
+   .react-calendar__tile:enabled:hover,
+   .react-calendar__tile:enabled:focus {
+    background: #f8f8fa;
+    color: var(--color-selected);
+    font-weight: bold;
+    border-radius: 5px;
+   }
+   .react-calendar__tile--hasActive:enabled:hover,
+   .react-calendar__tile--hasActive:enabled:focus {
+    background: #f8f8fa;
+   }
+   .react-calendar__tile--active {
+    background: var(--color-selected);
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+   }
+   .react-calendar__tile--active:enabled:hover,
+   .react-calendar__tile--active:enabled:focus {
+    background: var(--color-selected);
+    color: white;
+   }
+   .react-calendar--selectRange .react-calendar__tile--hover {
+    background-color: #f8f8fa;
+   }
+   .react-calendar__tile--range {
+    background: #f8f8fa;
+    color: var(--color-selected);
+    border-radius: 5px;
+   }
+   .react-calendar__tile--rangeStart {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    background: var(--color-selected);
+    color: white;
+   }
+   .react-calendar__tile--rangeEnd {
+    border-radius: 5px;
+    background: var(--color-selected);
+    color: white;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+    background-color: var(--color-boton-add);
+}
+
+.react-calendar__month-view__weekdays__weekday{
+    padding: 5px;
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

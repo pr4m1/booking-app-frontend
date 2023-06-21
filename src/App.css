@@ -1,0 +1,27 @@
+:root {
+  --principal-color:#ffffff;
+  --second-color:#2f4e2f;
+  --color-selected:#F3B61F;
+  --color-disabled:#510D0A;
+  --color-aditional:#ababab;
+  --color-boton-add: #A29F15;
+  --color-error: #d83f3f;
+  --color-exito:#3fc24c;
+
+  --height-header: 80px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Prompt', sans-serif;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  list-style: none;
+  text-decoration: none;
+}
+
+#App {
+  min-height: 100%;
+}
