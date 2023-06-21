@@ -12,10 +12,10 @@
     z-index: 999;
   }
 .modal-content-delete{
-  background-color: white;
+  background-color: var(--principal-color);
   min-height: min-content;
   height: auto;
-  border-radius: 5px;
+  border-radius: 2px;
   padding: 10px;
   display:grid;
   place-items: center;
@@ -29,7 +29,7 @@
     background-color: lightgray;
     min-height: min-content;
     height: auto;
-    border-radius: 5px;
+    border-radius: 2px;
     padding: 10px;
     display:grid;
     place-items: center;
@@ -43,13 +43,13 @@
   }
   .botones-alert button{
     padding: 2px;
-    border-radius: 5px;
+    border-radius: 2px;
     cursor: pointer;
   }
 
   .botones-alert #button-delete{
     background-color: var(--second-color);
-    color: white;
+    color: var(--principal-color);
   }
   .botones-alert #button-cancel:hover,
   .botones-alert #button-delete:hover{
@@ -64,7 +64,7 @@
   height: 20px;
   cursor: pointer;
   border: 1px solid var(--second-color);
-  border-radius: 5px;
+  border-radius: 2px;
 }
 
 .button-alert-close::before,

@@ -13,11 +13,11 @@
 .contenedor-principal-home p,
 .contenedor-principal-home .link-reserva-home {
     background-color: #000000a3;
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 10px;
     padding: 3px;
     margin: 2px;
-    color: white;
+    color: var(--principal-color);
     justify-content: center;
 }
 
@@ -26,7 +26,7 @@
     color: black;
 }
 .link-reserva-home:hover {
-    color: white;
-    border-color: white;
+    color: var(--principal-color);
+    border-color: var(--principal-color);
     background-color: var(--color-selected);
 }

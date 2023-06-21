@@ -105,7 +105,7 @@ function FormManager () {
             </div>
             <div className="form-container">
                 <label>Duration of the reservation:</label>
-                <select value={timeSlotSelect} onChange={(event)=>setTimeSlotSelect(event.target.value)}>
+                <select className="form-fit-content" value={timeSlotSelect} onChange={(event)=>setTimeSlotSelect(event.target.value)}>
                     {
                         availableTimeSlots.map((slot) => {
                             return <option key={slot} value={slot}>{slot}</option>;

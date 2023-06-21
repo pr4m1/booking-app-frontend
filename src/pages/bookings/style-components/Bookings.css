@@ -11,38 +11,7 @@
     font-size: 5vh;
     margin: 10px;
     text-align: center;
+    color: var(--second-color);
   }
   
 
-/* .container-principal-bookings h3 {
-    margin: 5px;
-}
-.select-lab-gestor {
-    width: 40vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.lab-selector {
-    width: (20vw -10px);
-    margin: 5px;
-}
-
-#lab-choice,
-#gestor-choice {
-    background-color: white;
-    width: 100px;
-    height: 25px;
-    border-radius: 5px;
-}
-
-#lab-choice:hover,
-#gestor-choice:hover {
-    background-color: var(--color-boton-add);
-    cursor: pointer;
-}
-select option{
-    background-color: var(--color-aditional);
-    cursor: pointer;
-} */

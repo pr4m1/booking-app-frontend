@@ -5,7 +5,7 @@ table.table-data {
 }
 
 table.table-data  tr{ 
-    background-color: var(--second-color);
+    background-color: var(--color-background-element);
     color: white; 
 }
 
@@ -34,7 +34,7 @@ col.column-100{
 #icon-trash{
     width: 20px;
     height: 23px;
-    color:white;
+    color:white ;
     cursor: pointer;
 }
 
