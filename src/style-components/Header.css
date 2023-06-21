@@ -6,7 +6,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: white;
+    color: var(--principal-color);
 }
 
 #container-header-left{
@@ -16,7 +16,7 @@ header {
 }
 
 #container-logo-titulo{
-  color: white;
+  color: var(--principal-color);
   height: 100%;
   padding: 5px;
   margin-right: 10px;
@@ -46,10 +46,10 @@ header img {
 
 
 .link-menu {
-  color: white;
+  color: var(--principal-color);
   font-size: 15px;
   padding: 0px 10px;
-  border-left: 1px solid white;
+  border-left: 1px solid var(--principal-color);
 }
 
 .link-menu.active {
@@ -57,8 +57,8 @@ header img {
 }
 
 .link-menu:hover {
-  color: white;
-  border-color: white;
+  color: var(--principal-color);
+  border-color: var(--principal-color);
   background-color: var(--color-selected);
 }
 
@@ -71,8 +71,8 @@ header img {
 
 .link-login{
   background-color: var(--principal-color);
-  border-radius: 5px;
-  border: 2px solid white;
+  border-radius: 2px;
+  border: 1px solid var(--principal-color);
   font-size: 15px;
   padding: 0px 10px;
   color: black;
@@ -80,16 +80,16 @@ header img {
 }
 
 .link-register {
-  color: white;
+  color: var(--principal-color);
   font-size: 15px;
   padding: 0px 10px;
-  border: 2px solid white;
-  border-radius: 5px;
+  border: 1px solid var(--principal-color);
+  border-radius: 2px;
 }
 
 .link-login:hover,
 .link-register:hover {
-  color: white;
-  border-color: white;
+  color: var(--principal-color);
+  border-color: var(--principal-color);
   background-color: var(--color-selected);
 }
