@@ -1,27 +1,19 @@
 footer {
-    height: 100px;
+    height: fit-content;
     width: 100%;
     margin-top: auto;
     padding: 10px;
     background-color: var(--second-color);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     color: var(--principal-color);
 }
-
-  footer div {
-    height: 100%;
-    flex-grow: 1;
+.datos-footer {
+    height: fit-content;
     display: grid;
     place-items: center;
-  }
-  footer img {
-    height: 80px;
-    width: auto;
-  }
-  .datos-footer p{
-    padding: 4px 2px 4px 2px;
+    padding: 4px 2px;
     font-size: 12px;
   }
   .footer-images {
@@ -31,4 +23,20 @@ footer {
   }
   .footer-images img{
     padding: 2px;
+    height: 80px;
+    width: auto;
+  }
+
+  @media screen and (max-width: 700px) {
+    footer {
+      flex-direction: column;
+    }
+    footer * {
+      padding: 4px;
+    }
+    .datos-footer p {
+      padding: 4px;
+      font-size: 12px;
+      text-align: center;
+    }
   }
