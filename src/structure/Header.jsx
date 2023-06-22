@@ -20,8 +20,8 @@ function Header(){
         </div>
         <div id='container-header-right'>
           <nav className='header-login-register'>
-              <NavLink className='link-login' to='/'>Login</NavLink>
-              <NavLink className='link-register' to='/'>Register</NavLink>
+              <NavLink className='link-login' to='/'>Log In</NavLink>
+              <NavLink className='link-register' to='/'>Sign Up</NavLink>
           </nav>
         </div>
     </header>

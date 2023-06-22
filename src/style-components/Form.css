@@ -19,6 +19,7 @@
     padding: 5px;
     margin: 5px;
     width: fit-content;
+    min-width: 300px;
 }
 
 .form-container label{
@@ -34,7 +35,7 @@
 .form-container .form-fit-content{
     padding: 1px;
     width: fit-content;
-    max-width: 200px;
+    max-width: 300px;
     border-radius: 2px;
     border: none;
     background-color: var(--principal-color);
@@ -56,18 +57,16 @@
 }
 
 .form-block-horizontal{
-    min-width: 100%;
     height: auto;
     display:flex;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-around;
-    flex-grow: 1;
 
 }
-@media (max-width: 900px) {
+@media screen and (max-width: 1024px) {
     .form-block-horizontal {
-      flex-wrap: wrap; /* Salto de línea cuando la pantalla es menor a 900px */
+      flex-direction: column;
     }
   }
 
@@ -75,8 +74,7 @@
     display: grid;
     place-content: center;
     padding-top: 15px;
-    width: 100%;
-    max-width: 400px;
+    width: 300px;
 }
 
 .form-container-submit #fm-submit-form{
