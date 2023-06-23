@@ -1,95 +1,135 @@
 header {
-    height: var(--height-header);
-    width: 100%;
-    padding: 10px;
-    background-color: var(--second-color);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: var(--principal-color);
-}
-
-#container-header-left{
+  height: var(--height-header);
+  width: 100%;
+  padding: .6rem;
+  background-color: var(--second-color);
   display: flex;
   align-items: center;
-  justify-content: left;
-}
-
-#container-logo-titulo{
   color: var(--principal-color);
-  height: 100%;
-  padding: 5px;
-  margin-right: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-#container-logo-titulo h1 {
-  height: auto;
-  font-size:30px;
-  padding-left: 10px;
-  text-align: center;
+
+#container-logo-title{
+color: var(--principal-color);
+height: 100%;
+padding: 5px;
+margin-right: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+#container-logo-title h1 {
+font-weight: 400;
+font-size:30px;
+padding-left: 5px;
+text-align: center;
 }
 
 header img {
-  width: 60px;
-  height: 60px;
-  background-color: var(--principal-color);
-  border-radius: 100%;
+width: 60px;
+height: 60px;
+background-color: var(--principal-color);
+border-radius: 100%;
 }
-  
-.header-routes-list {
-  height: 100%;
-  width: auto;
+
+
+.header-routes{
+  width: 100%;
   display: flex;
+  justify-content: space-between;
+}
+
+.header-routes-list {
+height: 100%;
+width: auto;
+display: flex;
 }
 
 
 .link-menu {
-  color: var(--principal-color);
-  font-size: 15px;
-  padding: 0px 10px;
-  border-left: 1px solid var(--principal-color);
+color: var(--principal-color);
+font-size: 15px;
+padding: 0px 10px;
+border-left: 1px solid var(--principal-color);
 }
 
 .link-menu.active {
-  background-color: var(--color-boton-add);
+background-color: var(--color-boton-add);
 }
 
 .link-menu:hover {
-  color: var(--principal-color);
-  border-color: var(--principal-color);
-  background-color: var(--color-selected);
+color: var(--principal-color);
+border-color: var(--principal-color);
+background-color: var(--color-selected);
 }
 
-#container-header-right{
-  margin-right: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: right;
+.header-login-register{
+margin-right: 10px;
+display: flex;
 }
 
 .link-login{
-  background-color: var(--principal-color);
-  border-radius: 2px;
-  border: 1px solid var(--principal-color);
-  font-size: 15px;
-  padding: 0px 10px;
-  color: black;
-  margin-right: 10px;
+background-color: var(--principal-color);
+border-radius: 2px;
+border: 1px solid var(--principal-color);
+font-size: 15px;
+padding: 0px 10px;
+color: black;
+margin-right: 10px;
 }
 
 .link-register {
-  color: var(--principal-color);
-  font-size: 15px;
-  padding: 0px 10px;
-  border: 1px solid var(--principal-color);
-  border-radius: 2px;
+color: var(--principal-color);
+font-size: 15px;
+padding: 0px 10px;
+border: 1px solid var(--principal-color);
+border-radius: 2px;
 }
 
 .link-login:hover,
 .link-register:hover {
-  color: var(--principal-color);
-  border-color: var(--principal-color);
-  background-color: var(--color-selected);
+color: var(--principal-color);
+border-color: var(--principal-color);
+background-color: var(--color-selected);
+}
+
+.icon-burger {
+  display: none;
+}
+
+@media screen and (max-width: 900px){
+  .header-routes {
+      display: none;
+  }
+  header {
+      justify-content: space-between;
+  }
+  .icon-burger {
+      color: var(--principal-color);
+      display: flex;
+      justify-content: right;
+  }
+  .icon-burger:hover{
+      cursor:pointer;
+      background-color: var(--color-selected);
+  }
+  .show{
+    position: absolute;
+      padding: 0 0 1rem 1rem;
+      display:flex;
+      flex-direction: column;
+      width: fit-content;
+      background-color: var(--second-color);
+      margin-right: auto;
+      right: 0;
+      top: var(--height-header);;
+  }
+  .show .header-routes-list,
+  .show .header-login-register{
+      flex-direction: column;
+      justify-content: left;
+  }
+
+  .link-menu{
+    border:none;
+  }
 }
