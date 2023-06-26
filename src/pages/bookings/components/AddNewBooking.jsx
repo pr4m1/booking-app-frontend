@@ -43,7 +43,7 @@ function AddNewBooking(){
     return(
         <div className="form-container-submit">
             {alert.length>0 && <Alert message={alert} close={()=>setAlert("")}/>}
-            <input id="fm-submit-form" type="submit" value="Add booking" onClick={submitBooking} />
+            <button id="fm-submit-form" onClick={submitBooking}>Add booking</button>
         </div>
     );
 }

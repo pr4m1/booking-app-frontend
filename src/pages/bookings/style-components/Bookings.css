@@ -1,14 +1,17 @@
 .container-principal-bookings {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    display: grid;
+    place-items: center;
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    min-width: fit-content;
 }
 
 
 
 .container-principal-bookings h1 {
-    font-size: 5vh;
+    font-size: 35px;
+    height: auto;
     margin: 10px;
     text-align: center;
     color: var(--second-color);

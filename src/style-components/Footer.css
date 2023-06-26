@@ -8,8 +8,10 @@ footer {
     align-items: center;
     justify-content: space-around;
     color: var(--principal-color);
+    overflow: hidden;
 }
 .datos-footer {
+    width: fit-content;
     height: fit-content;
     display: grid;
     place-items: center;

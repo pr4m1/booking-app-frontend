@@ -25,7 +25,7 @@ function useDataFormBooking () {
           }else{
             setNullLabs();
             setDurationSlot(0);
-            updateSlotsTime(null);
+            updateSlotsTime({ labSelected: null});
           }
       }
   

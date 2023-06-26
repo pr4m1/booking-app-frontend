@@ -1,7 +1,7 @@
 header {
   height: var(--height-header);
-  width: 100%;
-  padding: .6rem;
+  min-width: 100%;
+  padding: 10px;
   background-color: var(--second-color);
   display: flex;
   align-items: center;
@@ -102,11 +102,11 @@ background-color: var(--color-selected);
   }
   header {
       justify-content: space-between;
+      overflow: hidden;
   }
   .icon-burger {
       color: var(--principal-color);
-      display: flex;
-      justify-content: right;
+      display: block;
   }
   .icon-burger:hover{
       cursor:pointer;
@@ -114,14 +114,14 @@ background-color: var(--color-selected);
   }
   .show{
     position: absolute;
-      padding: 0 0 1rem 1rem;
-      display:flex;
-      flex-direction: column;
-      width: fit-content;
-      background-color: var(--second-color);
-      margin-right: auto;
-      right: 0;
-      top: var(--height-header);;
+    padding: 0 0 1rem 1rem;
+    display:flex;
+    flex-direction: column;
+    width: fit-content;
+    background-color: var(--second-color);
+    margin-right: auto;
+    right: 0;
+    top: var(--height-header);;
   }
   .show .header-routes-list,
   .show .header-login-register{

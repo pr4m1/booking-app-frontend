@@ -10,7 +10,8 @@ function LabSelect(){
                 <select className="form-fit-content" onChange={(e)=>updateLabSelected(JSON.parse(e.target.value))} >
                     {labs.length ? labs.map(lab => {
                         return(
-                            <option key={lab.id} value={JSON.stringify(lab)} label={lab.name}>
+                            <option key={lab.id} value={JSON.stringify(lab)} >
+                                {lab.name}
                             </option>
                         );
                     }) : <option  value ="" hidden>No labs available</option> }
@@ -21,7 +22,8 @@ function LabSelect(){
                 <select className="form-fit-content" onChange={(e)=>updateManagerAndLabs(JSON.parse(e.target.value))}>
                     {managers.length ? managers.map(manager => {
                     return(
-                            <option key={manager.id} value={JSON.stringify(manager)} label={manager.name} >
+                            <option key={manager.id} value={JSON.stringify(manager)}>
+                                {manager.name} 
                             </option>
                         );
                     }) : <option  value ="" hidden>No managers available</option>}
