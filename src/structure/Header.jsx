@@ -16,7 +16,7 @@ function Header() {
     }
   };
   window.addEventListener('resize', handleResize);
-
+  
 
   return (
     <header>
@@ -31,8 +31,8 @@ function Header() {
           <li><NavLink className="link-menu" to='/managers'>Managers</NavLink></li>
         </ul>
         <ul className="header-login-register">
-          <li><NavLink className={showMenu ? "link-menu" : "link-login"} to='/'>Log In</NavLink></li>
-          <li><NavLink className={showMenu ? "link-menu" : "link-register"} to='/'>Sign Up</NavLink></li>
+          <li><NavLink className={showMenu ? "link-menu" : "link-login"} to='/login'>Log In</NavLink></li>
+          <li><NavLink className={showMenu ? "link-menu" : "link-register"} to='/signup'>Sign Up</NavLink></li>
         </ul>
       </nav>
       <div className="icon-burger" onClick={toggleMenu}>

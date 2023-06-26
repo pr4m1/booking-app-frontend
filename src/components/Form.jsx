@@ -1,8 +1,8 @@
 import '../style-components/Form.css';
 
-function Form({children}){
+function Form({children,justifyLeft=""}){
     return(
-        <div className="container-form">
+        <div className={"container-form "+justifyLeft}>
             {children}
         </div>
     );

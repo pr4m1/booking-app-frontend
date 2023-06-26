@@ -97,7 +97,7 @@ function FormManager () {
  
 
     return (
-        <Form>
+        <Form justifyLeft="left">
             {alert.length>0 && <Alert message={alert} close={()=>setAlert("")}/>}
             <div className="form-container">
                 <label>Manager's name:</label>
@@ -144,7 +144,7 @@ function FormManager () {
                 />
             </div>
             <div className="form-container-submit">
-                <input id="fm-submit-form" type="submit" value="Add manager" onClick={submitManager} />
+                <button id="fm-submit-form" onClick={submitManager}>Add booking</button>
             </div>
         </Form>
     );

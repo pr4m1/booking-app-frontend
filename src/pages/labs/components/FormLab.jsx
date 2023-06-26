@@ -37,7 +37,7 @@ function FormLab () {
     }
 
     return (
-        <Form>
+        <Form justifyLeft="left">
             {alert.length>0 && <Alert message={alert} close={()=>setAlert("")}/>}
             <div className="form-container">
                 <label>Lab's name:</label>
@@ -55,7 +55,7 @@ function FormLab () {
                 </select>
             </div>
             <div className="form-container-submit">
-                <input id="fm-submit-form" type="submit" value="Add lab" onClick={submitLab} />
+                <button id="fm-submit-form" onClick={submitLab}>Add booking</button>
             </div>
         </Form>
     );

@@ -12,18 +12,29 @@
 .contenedor-principal-home h1, 
 .contenedor-principal-home p,
 .contenedor-principal-home .link-reserva-home {
-    background-color: #000000a3;
-    border: 1px solid black;
+    background-color: var(--second-color);
+    opacity: 90%;
+    border: 1px solid var(--second-color);
     border-radius: 10px;
-    padding: 3px;
+    padding: 5px;
     margin: 2px;
     color: var(--principal-color);
     justify-content: center;
 }
 
+.contenedor-principal-home h1{
+    font-size: 65px;
+    text-align: center;
+}
+
+.contenedor-principal-home p,
+.contenedor-principal-home .link-reserva-home {
+    font-size: 30px;
+}
+
 .link-reserva-home {
     margin-top: 10px;
-    color: black;
+    color: var(--second-color);;
 }
 .link-reserva-home:hover {
     color: var(--principal-color);

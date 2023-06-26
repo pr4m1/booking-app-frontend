@@ -9,12 +9,6 @@ main {
     animation: gradientBG 7s ease infinite forwards;
     overflow: auto;
   }
-  .container {
-    width: 100%;
-    position: absolute;
-    top: 35%;
-    text-align: center;
-  }
   @-webkit-keyframes gradientBG {
     0% {
       background-position: 0% 50%;

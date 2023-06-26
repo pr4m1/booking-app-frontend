@@ -12,11 +12,15 @@ function DateSelect(){
     }
     return (
         <div className="form-block-horizontal">
-            <div className="form-container">
-                <label>Select the date:</label>
-                <Calendar onChange={updateDate} value={valueDateTime.format("yyyy-MM-DD")} />
-                <label>Select the time zone:</label>
-                <TimeZoneSelect />
+            <div className="form-container-vertical">
+                <div className="form-container">
+                    <label>Select the date:</label>
+                    <Calendar onChange={updateDate} value={valueDateTime.format("yyyy-MM-DD")} />
+                </div>
+                <div className="form-container">
+                    <label>Select the time zone:</label>
+                    <TimeZoneSelect />
+                </div>
             </div>
             <div className="form-container">
                 <label>Select the time:</label>

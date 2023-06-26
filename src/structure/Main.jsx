@@ -4,6 +4,8 @@ import Bookings from '../pages/bookings/Bookings';
 import Labs from '../pages/labs/Labs';
 import Managers from '../pages/manager/Managers';
 import '../style-components/Main.css';
+import Login from '../pages/login/Login';
+import Signup from '../pages/login/Signup';
 
 
 function Main(){
@@ -14,6 +16,8 @@ function Main(){
                 <Route path='/bookings' element={<Bookings />} />
                 <Route path='/labs' element={<Labs />} />
                 <Route path='/managers' element={<Managers />} />
+                <Route path='/login' element={<Login />} />
+                <Route path='/signup' element={<Signup />} />
                 <Route path='*' element={<Navigate to="/"/>} />
             </Routes>
         </main>
