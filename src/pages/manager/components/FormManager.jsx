@@ -144,7 +144,7 @@ function FormManager () {
                 />
             </div>
             <div className="form-container-submit">
-                <button id="fm-submit-form" onClick={submitManager}>Add booking</button>
+                <button id="fm-submit-form" onClick={submitManager}>Add manager</button>
             </div>
         </Form>
     );

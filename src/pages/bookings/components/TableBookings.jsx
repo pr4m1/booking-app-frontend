@@ -13,8 +13,8 @@ function TableBookings( ){
     const {timeZone,bookings,stateData,updateTable} = useBookingContext();
     const [showAlertDelete,setShowAlertDelete] = useState(false);
     const [idDelete,setIdDelete] = useState("");
-    const columns=["column-100","column-auto","column-100","column-55","column-55"];
-    const heads=["Date","Lab","Hour","Id","Delete"];
+    const columns=["column-100","column-auto","column-100","column-55"];
+    const heads=["Date","Lab","Hour","Delete"];
 
     const deleteElement = () => {
         return fetchDeleteData(BOOKING_TYPE,idDelete)
@@ -36,7 +36,6 @@ function TableBookings( ){
                                     <td>{moment.utc(booking.date).tz(timeZone).format('DD/MM/yyyy')}</td>
                                     <td className="column-auto-element">{booking.lab.name}</td>
                                     <td>{moment.utc(booking.date).tz(timeZone).format('HH:mm')}</td>
-                                    <td>{booking.id}</td>
                                     <td>
                                         <IconTrash id="icon-trash" onClick={()=>{setShowAlertDelete(true);setIdDelete(booking.id);}}/>
                                     </td>

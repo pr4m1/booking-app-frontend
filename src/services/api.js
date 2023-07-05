@@ -1,4 +1,4 @@
-import { apiUrl } from "../Configuration";
+import { apiUrl, LAB_BY_MANAGER } from "../Configuration";
 
 
 const optionsNewElement = (data) => {
@@ -11,10 +11,24 @@ const optionsNewElement = (data) => {
         });
 };
 
+export const fetchLabByManager =  (idManager) => {
+    return fetch(apiUrl+LAB_BY_MANAGER+idManager)
+        .then(res => {
+            if (!res.ok) {
+                return res.json().then(errorResponse => {
+                    if(errorResponse?.message){
+                        throw new Error(errorResponse.message);
+                    }
+                    throw new Error("Problem adding new element!");
+                });
+            } 
+            return res.json();})
+        .catch(err => {throw err;});
+};
 
 
 export const fetchLoadData =  (type) => {
-    return fetch(apiUrl+type)
+    return fetch(apiUrl+type+"/all")
         .then(res => {
             if (!res.ok) {
                 return res.json().then(errorResponse => {

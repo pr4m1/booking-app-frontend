@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { fetchLoadData } from "../../../services/api";
-import { LAB_BY_MANAGER } from "../../../Configuration";
+import { fetchLabByManager } from "../../../services/api";
 
 
 function useFormBookingLab(){
@@ -12,8 +11,8 @@ function useFormBookingLab(){
         setLabSelected(null);
     }
 
-    const updateLabs = async (idGestor) => {
-        let labS= await fetchLoadData(LAB_BY_MANAGER+idGestor)
+    const updateLabs = async (idManager) => {
+        let labS= await fetchLabByManager(idManager)
             .then(data => {
                 setLabs(data);
                 let lab = data.length>0 ? data[0] : null;
