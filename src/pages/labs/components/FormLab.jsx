@@ -55,7 +55,7 @@ function FormLab () {
                 </select>
             </div>
             <div className="form-container-submit">
-                <button id="fm-submit-form" onClick={submitLab}>Add booking</button>
+                <button id="fm-submit-form" onClick={submitLab}>Add lab</button>
             </div>
         </Form>
     );

@@ -11,8 +11,8 @@ function TableLabs(){
     const {data:labs,stateData,update} = useDataContext();
     const [idDelete,setIdDelete] = useState("");
     const [showAlertDelete,setShowAlertDelete] = useState(false);   
-    const columns=["column-auto","column-auto","column-55","column-55"];
-    const heads=["Name","Manager","Id","Delete"];
+    const columns=["column-auto","column-auto","column-55"];
+    const heads=["Name","Manager","Delete"];
     
     const deleteElement = () => {
         return fetchDeleteData(LAB_TYPE,idDelete)
@@ -34,7 +34,6 @@ function TableLabs(){
                             <tr key={lab.id} className="row-body">
                                 <td className="column-auto-element">{lab.name}</td>
                                 <td className="column-auto-element">{lab.manager.name}</td>
-                                <td>{lab.id}</td>
                                 <td>
                                     <IconTrash id="icon-trash" onClick={()=>{setShowAlertDelete(true);setIdDelete(lab.id);}}/>
                                 </td>

@@ -11,8 +11,8 @@ function TableManagers(){
     const {data:managers,stateData,update} = useDataContext();
     const [idDelete,setIdDelete] = useState("");
     const [showAlertDelete,setShowAlertDelete] = useState(false);   
-    const columns=["column-auto","column-100","column-90","column-90","column-90","column-55","column-55"];
-    const heads=["Name","Duration","MaxDay","MaxWeek","MaxTotal","Id","Delete"];
+    const columns=["column-auto","column-100","column-90","column-90","column-90","column-55"];
+    const heads=["Name","Duration","MaxDay","MaxWeek","MaxTotal","Delete"];
     
     const deleteElement = () => {
         return fetchDeleteData(MANAGER_TYPE,idDelete)
@@ -37,7 +37,6 @@ function TableManagers(){
                                 <td>{manager.numberTimeSlotsDay}</td>
                                 <td>{manager.numberTimeSlotsWeek}</td>
                                 <td>{manager.numberTimeSlotsTotal}</td>
-                                <td>{manager.id}</td>
                                 <td>
                                     <IconTrash id="icon-trash" onClick={()=>{setShowAlertDelete(true);setIdDelete(manager.id);}}/>
                                 </td>

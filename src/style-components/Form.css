@@ -118,7 +118,7 @@
 
 #fm-submit-form{
     padding: 4px;
-    font-size: large;  
+    font-size: 15px;  
     color: var(--second-color);
     background-color: var(--principal-color);
     border: 1px solid var(--second-color);
