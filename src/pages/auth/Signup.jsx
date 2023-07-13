@@ -3,6 +3,7 @@ import Form from '../../components/Form';
 import './style-components/Login.css';
 import bookLabIcon from '../../assets/con_punto-removebg-preview.png';
 import { NavLink } from 'react-router-dom';
+import { signup } from '../../services/api';
 
 function Signup(){
     const [username,setUsername] =useState("");
@@ -10,9 +11,17 @@ function Signup(){
     const [passwordRepeat,setPasswordRepeat]=useState("");
     const [message,setMessage] = useState("");
 
-    const submitLogin= () =>{
+    const submitSignup= () =>{
         if(password!==passwordRepeat){
             setMessage("Different password!");
+        }else{
+            const data ={
+                username: username,
+                password: password
+            }
+            signup(data)
+                .then(()=>{window.location.href="/bookings"})
+                .catch(error => {setMessage(error.message);})
         }
         setPassword("");
         setPasswordRepeat("");
@@ -35,7 +44,7 @@ function Signup(){
                     <input className="form-fit-content" type="password" value={passwordRepeat} onChange={(event)=>setPasswordRepeat(event.target.value)} placeholder='password'/>
                 </div>
                 <div className="form-container-submit">
-                    <button id="fm-submit-form" onClick={submitLogin}>Log in</button>
+                    <button id="fm-submit-form" onClick={submitSignup}>Sign up</button>
                 </div>
             </Form>
             {message.length>0? <h4 className='error-message'>{message}</h4>: "" }

@@ -44,7 +44,6 @@ width: auto;
 display: flex;
 }
 
-
 .link-menu {
 color: var(--principal-color);
 font-size: 15px;
@@ -83,6 +82,7 @@ font-size: 15px;
 padding: 0px 10px;
 border: 1px solid var(--principal-color);
 border-radius: 2px;
+background-color: var(--second-color);
 }
 
 .link-login:hover,
@@ -94,6 +94,17 @@ background-color: var(--color-selected);
 
 .icon-burger {
   display: none;
+}
+
+.welcome-username{
+  color: var(--principal-color);
+  padding-right: 5px;
+  max-width: 150px;
+  width: fit-content;
+  height: 20px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 900px){
@@ -131,5 +142,7 @@ background-color: var(--color-selected);
 
   .link-menu{
     border:none;
+    background-color: var(--second-color);
+    color: var(--principal-color);
   }
 }

@@ -6,3 +6,4 @@ export const MANAGER_TYPE="manager";
 export const LAB_TYPE="lab"; 
 export const BOOKING_TYPE="booking";
 export const LAB_BY_MANAGER="lab/manager/";
+export const USER_TYPE="user";
