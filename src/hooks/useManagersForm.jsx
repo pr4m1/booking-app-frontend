@@ -8,7 +8,7 @@ function useManagersForm(){
     const [managerSelected,setManagerSelected]=useState(null);
 
     useEffect(() => {
-        fetchLoadData(MANAGER_TYPE)
+        fetchLoadData(MANAGER_TYPE+"/all")
             .then(data => {
                 setManagers(data);
                 if(data.length>0) setManagerSelected(data[0])

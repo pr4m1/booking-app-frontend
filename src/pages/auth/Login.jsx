@@ -3,13 +3,21 @@ import Form from '../../components/Form';
 import './style-components/Login.css';
 import bookLabIcon from '../../assets/con_punto-removebg-preview.png';
 import { NavLink } from 'react-router-dom';
+import { login } from '../../services/api';
 
 function Login(){
     const [username,setUsername] =useState("");
     const [password,setPassword] =useState("");
     const [message,setMessage] = useState("");
     const submitLogin= () =>{
-        setMessage(`Test de message! ${username}`);
+        const data ={
+            username: username,
+            password: password
+        }
+        login(data)
+            .then(() => {
+                window.location.href="/bookings";})
+            .catch(error => setMessage(error.message))
         setPassword("");
     };
     return (

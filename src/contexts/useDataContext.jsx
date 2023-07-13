@@ -10,7 +10,7 @@ export function useDataContext() {
 
 
 export function DataContextProvider({ children,type }) {
-    const {...value} = useData(type);
+    const {...value} = useData(type+"/all");
 
     return (
         <dataContext.Provider value={value}>
