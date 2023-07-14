@@ -37,7 +37,7 @@ function Login(){
                     <button id="fm-submit-form" onClick={submitLogin}>Log in</button>
                 </div>
             </Form>
-            {message.length>0? <h4 className='error-message'>{message}</h4>: "" }
+            {message.length>0? <pre className='error-message'>{message}</pre>: "" }
             <h4>Sign up <NavLink className="text-link" to='/signup'>here</NavLink>!</h4>
         </div>
     );

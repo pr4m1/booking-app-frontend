@@ -11,8 +11,49 @@ function Signup(){
     const [passwordRepeat,setPasswordRepeat]=useState("");
     const [message,setMessage] = useState("");
 
+    const checkPassword = (pass) => {
+        // Check lowercase
+        var regexMinuscula = /[a-z]/;
+        if (!regexMinuscula.test(pass)) {
+            return false;
+        }
+        
+        // Check uppercase
+        var regexMayuscula = /[A-Z]/;
+        if (!regexMayuscula.test(pass)) {
+            return false;
+        }
+        
+        // Check number
+        var regexNumero = /[0-9]/;
+        if (!regexNumero.test(pass)) {
+            return false;
+        }
+        
+        // Check symbol
+        var regexSimbolo = /[-!@#$%^&*()_+=[\]{};':"\\|,.<>/?]/;
+        if (!regexSimbolo.test(pass)) {
+            return false;
+        }
+        
+        // Check length
+        if (pass.length < 8) {
+            return false;
+        }
+        return true;
+    } 
+
     const submitSignup= () =>{
-        if(password!==passwordRepeat){
+        if(username.length===0){
+            setMessage("Enter a username!");
+        }else if(!checkPassword(password)){
+            setMessage("Requirements:\n" +
+            "- 8 characters or more\n" +
+            "- At least one lowercase\n" +
+            "- At least one capital letter\n" +
+            "- At least one number\n" +
+            "- At least one symbol: [-!@#$%^&*()_+=[]{};':\"\\|,.<>/?]");
+        }else if(password!==passwordRepeat){
             setMessage("Different password!");
         }else{
             const data ={
@@ -47,7 +88,7 @@ function Signup(){
                     <button id="fm-submit-form" onClick={submitSignup}>Sign up</button>
                 </div>
             </Form>
-            {message.length>0? <h4 className='error-message'>{message}</h4>: "" }
+            {message.length>0? <pre className='error-message'>{message}</pre>: "" }
             <h4>Log in <NavLink className="text-link" to='/login'>here</NavLink>!</h4>
         </div>
     );
