@@ -5,10 +5,34 @@
     overflow: auto;
     margin: 2rem;
 }
+.container-table::-webkit-scrollbar{
+    height: 7px;
+    width: 7px;
+}
+  
+.container-table::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 2px;
+}
+  
+.container-table::-webkit-scrollbar-thumb {
+    background-color: var(--color-disabled); 
+    border-radius: 2px;
+}
+  
+.container-table::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+
+}
+
 table.table-data {
     border-collapse: separate;
-    border-spacing: 0 5px;
+    border-spacing: 0 0;
     width: 100%;
+}
+
+table.table-data tr {
+    margin-top: 3px;
 }
 
 table.table-data thead {
