@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import '../style-components/Alert.css';
-import { IconCircleCheck,IconExclamationCircle } from '@tabler/icons-react';
+import { IconExclamationCircle } from '@tabler/icons-react';
 import Loader from "./Loader";
 
 export const Alert = ({ message,close }) => {
@@ -21,14 +21,14 @@ export const AlertDelete = ({close,deleteElement }) => {
     const  handleClick =  async () => {
       setAlert(1);
       await deleteElement()
-            .then(()=>{setAlert(2)})
+            .then(close())
             .catch((error) => {
               if (error?.message) {
                 setContent(error.message);
               }else{
                 setContent("Problem deleting element!")
               }
-              setAlert(3);
+              setAlert(2);
           });
   
     }
@@ -49,13 +49,6 @@ export const AlertDelete = ({close,deleteElement }) => {
                           </div>
                         </div>}
         {alert===2 && <div className="modal-content">
-                          <div className="button-alert-close" onClick={close}></div>
-                          <div className="content-alert-success-error">
-                            <IconCircleCheck id="icon-succes"/>
-                            <p className="modal-close-cotent">The item has been successfully deleted</p>
-                          </div>
-                        </div>}
-        {alert===3 && <div className="modal-content">
                           <div className="button-alert-close" onClick={close}></div>
                           <div className="content-alert-success-error">
                             <IconExclamationCircle id="icon-error"/>
