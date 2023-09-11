@@ -28,7 +28,6 @@ function AddNewBooking(){
             };
             fetchAddData(BOOKING_TYPE,bookingNew)
                 .then(()=>{
-                    setAlert("Booking added!");
                     updateTable();
                 })
                 .catch((error) => {
