@@ -20,6 +20,7 @@
     margin: 2px;
     color: var(--principal-color);
     justify-content: center;
+    text-align: center;
 }
 
 .contenedor-principal-home h1{

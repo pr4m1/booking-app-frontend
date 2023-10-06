@@ -2,7 +2,7 @@ import { useState } from "react";
 import { fetchAddData } from "../../../services/api";
 import { LAB_TYPE } from "../../../Configuration";
 import { Alert } from "../../../components/Alert";
-import useManagersForm from "../../../hooks/useManagersForm";
+import useManagersForm from "../hooks/useManagersForm";
 import { useDataContext } from "../../../contexts/useDataContext";
 import Form from "../../../components/Form";
 

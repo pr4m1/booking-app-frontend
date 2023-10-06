@@ -1,6 +1,6 @@
 import { useEffect,useState } from "react";
-import { fetchLoadData } from "../services/api";
-import { MANAGER_TYPE } from "../Configuration";
+import { fetchLoadData } from "../../../services/api";
+import { MANAGER_TYPE_ALL} from "../../../Configuration";
 
 
 function useManagersForm(){
@@ -8,7 +8,7 @@ function useManagersForm(){
     const [managerSelected,setManagerSelected]=useState(null);
 
     useEffect(() => {
-        fetchLoadData(MANAGER_TYPE+"/all")
+        fetchLoadData(MANAGER_TYPE_ALL)
             .then(data => {
                 setManagers(data);
                 if(data.length>0) setManagerSelected(data[0])
