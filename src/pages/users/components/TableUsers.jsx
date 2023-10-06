@@ -3,12 +3,12 @@ import Table from "../../../components/Table";
 import useData from '../../../hooks/useData';
 import { IconTrash } from '@tabler/icons-react';
 import { AlertDelete } from '../../../components/Alert';
-import { USER_TYPE } from '../../../Configuration';
+import { USER_TYPE,USER_TYPE_ALL } from '../../../Configuration';
 import { fetchDeleteData, getUser } from '../../../services/api';
 import Loader from '../../../components/Loader';
 
 function TableUsers(){
-    const {data: users, stateData, update} = useData(USER_TYPE+"/all");
+    const {data: users, stateData, update} = useData(USER_TYPE_ALL);
     const [idDelete,setIdDelete] = useState("");
     const [showAlertDelete,setShowAlertDelete] = useState(false);   
     const columns=["column-auto","column-55"];

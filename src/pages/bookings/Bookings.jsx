@@ -14,7 +14,7 @@ function Bookings(){
             <h1>Book the lab you want now!</h1>
             <BookingContextProvider>
                 <FormBooking />
-                {user.role==="ADMIN" ?
+                {user?.role==="ADMIN" ?
                     <TableBookingsAdmin />
                 :
                     <TableBookings />

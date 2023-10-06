@@ -1,14 +1,14 @@
 import {  useState,useEffect } from 'react';
 import useFormBookingLab from './useFormBookingLab';
 import { fetchLoadData,getUser } from '../../../services/api';
-import { MANAGER_TYPE,BOOKING_TYPE } from '../../../Configuration';
+import { MANAGER_TYPE_ALL,BOOKING_TYPE_ALL,BOOKING_TYPE_MY} from '../../../Configuration';
 import useFormBookingTime from './useFormBookingTime';
 import useData from '../../../hooks/useData';
 import moment from 'moment';
 
 function useDataFormBooking () {
     const user = getUser(); 
-    const urlBookings = user.role==="ADMIN" ? BOOKING_TYPE+"/all" : BOOKING_TYPE+"/my";
+    const urlBookings = user?.role==="ADMIN" ? BOOKING_TYPE_ALL : BOOKING_TYPE_MY;
     const [managers,setManagers] = useState([]);
     const { labs,updateLabs,labSelected,setLabSelected,setNullLabs } = useFormBookingLab();
     const { valueDateTime,setValueDateTime,updateSlotsTime,timeZone,updateTimeZone,timeOptionToShow,timeDisabled, setDurationSlot,notTimeOptionsAvailableToSelect } = useFormBookingTime();
@@ -42,7 +42,7 @@ function useDataFormBooking () {
     }
 
     useEffect(() => {
-      fetchLoadData(MANAGER_TYPE+"/all")
+      fetchLoadData(MANAGER_TYPE_ALL)
           .then(data => {
               setManagers(data);
               if(data.length>0){

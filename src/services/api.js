@@ -1,12 +1,16 @@
-import { apiUrl, LAB_BY_MANAGER } from "../Configuration";
+import { API_URL, BOOKING_DISABLED, DELETE, LAB_BY_MANAGER, LOGIN,LOGOUT, SAVE, SIGNUP } from "../Configuration";
 
 export const getUser = () => {
     return  JSON.parse(window.localStorage.getItem("user"));
-}
+}; 
+
+export const removeUser = () => {
+    window.localStorage.removeItem("user");
+}; 
 
 const setUser = (user) => {
     window.localStorage.setItem("user",user);
-}
+}; 
 
 const authHeader = () => {
     let user = getUser();
@@ -15,7 +19,7 @@ const authHeader = () => {
     }else{
         return {};
     }
-}
+}; 
 
 const optionsNewElement = (data) => {
     let user = getUser();
@@ -36,8 +40,9 @@ const optionsNewElement = (data) => {
         body: JSON.stringify(data)
         });
 };
+
 export const login = (data) => {
-    return fetch(apiUrl+"auth/login",optionsNewElement(data))
+    return fetch(API_URL+LOGIN,optionsNewElement(data))
         .then(res => {
             if (!res.ok) {
                 return res.json().then(data=>{throw new Error(data.message)});
@@ -45,9 +50,10 @@ export const login = (data) => {
             return res.json().then(data=>setUser(JSON.stringify(data)));
         })
         .catch(err => {throw err;});
-}
+}; 
+
 export const signup = (data) => {
-    return fetch(apiUrl+"auth/signup",optionsNewElement(data))
+    return fetch(API_URL+SIGNUP,optionsNewElement(data))
         .then(res => {
             if (!res.ok) {
                 return res.json().then(data=>{throw new Error(data.message)});
@@ -55,26 +61,27 @@ export const signup = (data) => {
             return res.json().then(data=>setUser(JSON.stringify(data)));
         })
         .catch(err => {throw err;});
-}
+}; 
+
 export const logout = () => {
-    window.localStorage.removeItem("user");
+    removeUser();
     window.location.href="/";
-    return fetch(apiUrl+"auth/logout",{headers: authHeader()})
+    return fetch(API_URL+LOGOUT,{headers: authHeader()})
         .then(res => {
             if (!res.ok) {
                 throw new Error("Problem with logout!");
             };
             return res.ok})
         .catch(err => {throw err;});
-}
+}; 
 
 export const fetchLabByManager =  (idManager) => {
-    return fetch(apiUrl+LAB_BY_MANAGER+idManager,{headers: authHeader()})
+    return fetch(API_URL+LAB_BY_MANAGER+idManager,{headers: authHeader()})
         .then(res => {
             if (!res.ok) {
                 if(res.status===403){
                     logout();
-                    return;
+                    throw new Error();
                 }
                 return res.json().then(errorResponse => {
                     if(errorResponse?.message){
@@ -87,14 +94,13 @@ export const fetchLabByManager =  (idManager) => {
         .catch(err => {throw err;});
 };
 
-
 export const fetchLoadData =  (type) => {
-    return fetch(apiUrl+type,{headers: authHeader()})
+    return fetch(API_URL+type,{headers: authHeader()})
         .then(res => {
             if (!res.ok) {
                 if(res.status===403){
                     logout();
-                    return;
+                    throw new Error();
                 }
                 return res.json().then(errorResponse => {
                     if(errorResponse?.message){
@@ -108,12 +114,12 @@ export const fetchLoadData =  (type) => {
 }; 
 
 export const fetchDeleteData = (type,id) =>{
-    return fetch(`${apiUrl}${type}/delete/${id}`, { headers: authHeader(),method: 'DELETE' })
+    return fetch(`${API_URL}${type}${DELETE}${id}`, { headers: authHeader(),method: 'DELETE' })
         .then(res => {
             if (!res.ok) {
                 if(res.status===403){
                     logout();
-                    return;
+                    throw new Error();
                 }
                 return res.json().then(errorResponse => {
                     if(errorResponse?.message){
@@ -124,14 +130,15 @@ export const fetchDeleteData = (type,id) =>{
             } 
             return res;})
         .catch((err) => {throw err;});
-}
+}; 
+
 export const fetchAddData = (type,data) =>{
-    return fetch(`${apiUrl}${type}/save`,optionsNewElement(data))
+    return fetch(`${API_URL}${type}${SAVE}`,optionsNewElement(data))
         .then(res => {
             if (!res.ok) {
                 if(res.status===403){
                     logout();
-                    return;
+                    throw new Error();
                 }
                 return res.json().then(errorResponse => {
                     if(errorResponse?.message){
@@ -143,15 +150,15 @@ export const fetchAddData = (type,data) =>{
             return res;})
         .catch((err) => {
             throw err;});
-}
+}; 
 
 export const fetchTimeNotAvailable = async (props) => {
-    return fetch(`${apiUrl}booking/disabled/${props.id_lab}/${props.date}`,{headers: authHeader()})
+    return fetch(`${API_URL}${BOOKING_DISABLED}${props.id_lab}/${props.date}`,{headers: authHeader()})
         .then(res => {
             if (!res.ok) {
                 if(res.status===403){
                     logout();
-                    return;
+                    throw new Error();
                 }
                 return res.json().then(errorResponse => {
                     if(errorResponse?.message){
@@ -162,4 +169,4 @@ export const fetchTimeNotAvailable = async (props) => {
             } 
             return res.json();})
         .catch(err=>{throw err});
-}
+}; 
